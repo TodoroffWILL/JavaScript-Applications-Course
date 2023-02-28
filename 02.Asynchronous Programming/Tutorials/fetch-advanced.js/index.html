@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Advanced</title>
+  </head>
+  <body>
+    <h1>Profiles</h1>
+    <input type="text" name="Title" id="title" />
+    <button id="add-profile">Add Profile</button>
+    <button id="load-profiles">Load Profiles</button>
+    <ul id="profiles"></ul>
+    <script>
+      const addProfile = document.getElementById('add-profile');
+      const titleInput = document.getElementById('title');
+
+      const btn = document.getElementById('load-profiles');
+      const profiles = document.getElementById('profiles');
+      const url = 'http://localhost:3030/jsonstore/advanced';
+      btn.addEventListener('click', () => {
+        fetch(`${url}/profiles`)
+          .then((response) => response.json())
+          .then((data) => {
+            Object.values(data).map((x) => {
+              let liElement = document.createElement('li');
+              liElement.textContent = x.username;
+              profiles.appendChild(liElement);
+            });
+          })
+          .catch((err) => console.log(err));
+      });
+      addProfile.addEventListener('click', () => {
+        let title = titleInput.value;
+        const options = {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({ title }),
+        };
+        fetch(`${url}/profiles`, options)
+          .then((res) => res.json())
+          .then((profile) => {
+            let liElement = document.createElement('li');
+            liElement.textContent = profile.title;
+            profiles.appendChild(liElement);
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

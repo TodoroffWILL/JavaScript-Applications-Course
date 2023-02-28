@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async/Await</title>
+  </head>
+  <body>
+    <script>
+      const baseUrl = 'https://swapi.dev/api/species';
+      // All async func returns promise !
+      async function getStarWarsChar(id) {
+        try {
+          let response = await fetch(`${baseUrl}/${id}`); // Returning the promise like the 1st .then !
+          let character = await response.json(); // Resolving the promise like the 2nd .then !
+
+          return character;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getStarWarsChar(4).then((res) => console.log(res));
+
+      //   const getStarWarsChar2 = async function () {
+      //     let character = await getStarWarsChar(1);
+      //   };
+      // const getStarWarsChar = async () => {};
+    </script>
+  </body>
+</html>
