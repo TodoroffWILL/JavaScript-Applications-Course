@@ -34,12 +34,13 @@
       <nav>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="/" id="homeLink">Home</a>
           </li>
         </ul>
       </nav>
     </header>
 
+    <main id="main"></main>
     <!-- HOMEPAGE -->
     <section id="homeView">
       <div class="container">
@@ -70,8 +71,8 @@
                 ></textarea>
               </div>
               <div class="new-topic-buttons">
-                <button class="cancel">Cancel</button>
-                <button class="public">Post</button>
+                <button name="cancel" class="cancel">Cancel</button>
+                <button name="submit" class="public">Post</button>
               </div>
             </form>
           </div>
@@ -123,7 +124,7 @@
           <div class="theme-title">
             <div class="theme-name-wrapper">
               <div class="theme-name">
-                <h2>Angular 10</h2>
+                <h2 id="details-title">Angular 10</h2>
               </div>
             </div>
           </div>
@@ -132,10 +133,11 @@
             <div class="header">
               <img src="./static/profile.png" alt="avatar" />
               <p>
-                <span>David</span> posted on <time>2020-10-10 12:08:28</time>
+                <span id="details-username">David</span> posted on
+                <time id="details-time">2020-10-10 12:08:28</time>
               </p>
 
-              <p class="post-content">
+              <p class="post-content" id="details-content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
                 facere sint dolorem quam, accusantium ipsa veniam laudantium
                 inventore aut, tenetur quibusdam doloribus. Incidunt odio
