@@ -28,18 +28,12 @@ function createIdeaHTML(idea, isOwner) {
   <div class="desc">
     <h2 class="display-5">${idea.title}</h2>
     <p class="infoType">Description:</p>
-    <p class="idea-description">
-      ${idea.description};
-    </p>
+    <p class="idea-description">${idea.description}</p>
   </div>`;
   if (isOwner) {
     html +=
-      '<div class="text-center"><a id = "deleteBTN"class="btn detb" href="">Delete</a></div>';
+      `<div class="text-center"><a id = "deleteBTN"class="btn detb" href="">Delete</a></div>`;
   }
-
   return html;
 }
 
-/*
-
-*/
