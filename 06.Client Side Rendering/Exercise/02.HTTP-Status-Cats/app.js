@@ -31,13 +31,12 @@ const template = (cats) =>
   `;
 
 // Adding click listenr on every card
-
 render(template(cats), section);
 
 function showDetails(e) {
-  e.target.textContent === 'Show status code'
-    ? (e.target.textContent = 'Hide status code')
-    : (e.target.textContent = 'Show status code');
+  e.target.textContent === 'Hide status code'
+    ? (e.target.textContent = 'Show status code')
+    : (e.target.textContent = 'Hide status code');
   e.target.nextElementSibling.style.display === 'none'
     ? (e.target.nextElementSibling.style = 'display: block')
     : (e.target.nextElementSibling.style = 'display: none');
