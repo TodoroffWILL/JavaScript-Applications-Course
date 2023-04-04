@@ -33,6 +33,7 @@ const loginTemplate = () => html` <div class="row space-top">
   </form>`;
 
 export async function loginView() {
+  
   render(loginTemplate(), root);
 }
 

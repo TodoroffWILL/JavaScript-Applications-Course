@@ -1,0 +1,9 @@
+[x] examine project template
+[x] setup project
+[x] create base architecture
+[x] create static page handlers
+[x] generalized API calling module
+[x] implement page logic
+- API calls
+- view
+- business logic/controls
